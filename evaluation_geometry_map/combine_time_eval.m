@@ -4,7 +4,7 @@
 octave_settings();
 
 name=argv(){1}
-subf={'001_2','050_2','100_2','150_2','200_2','250','300','350','400','450','500'};
+subf={'001_3','051_3','101_3','151_3','201_3','251_3','301_3','351_3','401_3','451_3','501_3'};
 outputstr=['/share/goa-tz/evaluation_geometry_map/data/timing/combined/',name];
 for i=1:1:length(subf)
 loadstr=['/share/goa-tz/evaluation_geometry_map/data/timing/',subf{i},'/',name,'.txt'];

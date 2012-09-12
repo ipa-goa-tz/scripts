@@ -1,45 +1,45 @@
 #!/usr/bin/env bash
 
-./time_eval.m  001_2 addmapentry
-./time_eval.m  001_2 polygon_ismergecandidate 
-./time_eval.m  001_2 polygon_merge
+./time_eval.m  001_3 addmapentry
+./time_eval.m  001_3 polygon_ismergecandidate 
+./time_eval.m  001_3 polygon_merge
 
-./time_eval.m  050_2 addmapentry
-./time_eval.m  050_2 polygon_ismergecandidate 
-./time_eval.m  050_2 polygon_merge
+./time_eval.m  051_3 addmapentry
+./time_eval.m  051_3 polygon_ismergecandidate 
+./time_eval.m  051_3 polygon_merge
 
-./time_eval.m  100_2 addmapentry
-./time_eval.m  100_2 polygon_ismergecandidate 
-./time_eval.m  100_2 polygon_merge
+./time_eval.m  101_3 addmapentry
+./time_eval.m  101_3 polygon_ismergecandidate 
+./time_eval.m  101_3 polygon_merge
 
-./time_eval.m  150_2  addmapentry
-./time_eval.m  150_2  polygon_ismergecandidate 
-./time_eval.m  150_2  polygon_merge
+./time_eval.m  151_3  addmapentry
+./time_eval.m  151_3  polygon_ismergecandidate 
+./time_eval.m  151_3  polygon_merge
 
-./time_eval.m  200_2 addmapentry
-./time_eval.m  200_2 polygon_ismergecandidate 
-./time_eval.m  200_2 polygon_merge
+./time_eval.m  201_3 addmapentry
+./time_eval.m  201_3 polygon_ismergecandidate 
+./time_eval.m  201_3 polygon_merge
 
-./time_eval.m  250 addmapentry
-./time_eval.m  250 polygon_ismergecandidate 
-./time_eval.m  250 polygon_merge
+./time_eval.m  251_3 addmapentry
+./time_eval.m  251_3 polygon_ismergecandidate 
+./time_eval.m  251_3 polygon_merge
 
-./time_eval.m  300  addmapentry
-./time_eval.m  300  polygon_ismergecandidate 
-./time_eval.m  300  polygon_merge
+./time_eval.m  301_3  addmapentry
+./time_eval.m  301_3  polygon_ismergecandidate 
+./time_eval.m  301_3  polygon_merge
 
-./time_eval.m  350 addmapentry
-./time_eval.m  350 polygon_ismergecandidate 
-./time_eval.m  350 polygon_merge
+./time_eval.m  351_3 addmapentry
+./time_eval.m  351_3 polygon_ismergecandidate 
+./time_eval.m  351_3 polygon_merge
 
-./time_eval.m  400 addmapentry
-./time_eval.m  400 polygon_ismergecandidate 
-./time_eval.m  400 polygon_merge
+./time_eval.m  401_3 addmapentry
+./time_eval.m  401_3 polygon_ismergecandidate 
+./time_eval.m  401_3 polygon_merge
 
-./time_eval.m  450 addmapentry
-./time_eval.m  450 polygon_ismergecandidate 
-./time_eval.m  450 polygon_merge
+./time_eval.m  451_3 addmapentry
+./time_eval.m  451_3 polygon_ismergecandidate 
+./time_eval.m  451_3 polygon_merge
 
-./time_eval.m  500 addmapentry
-./time_eval.m  500 polygon_ismergecandidate 
-./time_eval.m  500 polygon_merge
+./time_eval.m  501_3 addmapentry
+./time_eval.m  501_3 polygon_ismergecandidate 
+./time_eval.m  501_3 polygon_merge
