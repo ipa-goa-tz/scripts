@@ -1,14 +1,24 @@
+#!/usr/bin/env octave
 %script evaluates merge performance under time aspect
 
 %load data
 
 octave_settings();
 clear all;
-name='polygon_ismergecandidate';
-loadstr=['/home/goa-tz/eval/timing/',name];
+
+subf=argv(){1}
+name=argv(){2}
+loadstr=['/home/goa-tz/eval/timing/',subf,'/',name];
+mkdir('/share/goa-tz/evaluation_geometry_map/data/timing/',subf);
+outputstr=['/share/goa-tz/evaluation_geometry_map/data/timing/',subf,'/',name];
+
 data =load(loadstr);
 
 %data =load('/home/goa-tz/eval/timing/cylinder_merge');
+%make raw data plot
+plot([1:1:length(data)],data(:,2));
+print('dpdf',[outputstr,'_raw.pdf']);
+
 data=sortrows(data);
 %assign columns to values
 
@@ -45,10 +55,10 @@ if size(m,1)>1
 plot(i_sum(:,1),m)
 plot_trace([i_sum(:,1),m*1000],'k','o','mergeTime in msec')
 end
-outputstr=['/share/goa-tz/evaluation_geometry_map/data/timing/',name];
 header={'NumberOfShapes','AverageTime[msec]'};
 data = [i_sum(:,1),m*1000];
 file_output(outputstr,data,header,'txt',3)
+
 
 
 
