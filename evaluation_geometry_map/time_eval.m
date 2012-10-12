@@ -6,18 +6,21 @@
 octave_settings();
 clear all;
 
+set(0, 'defaultfigurevisible', 'off'); 
+
 subf=argv(){1}
 name=argv(){2}
 loadstr=['/home/goa-tz/eval/timing/',subf,'/',name];
 mkdir('/share/goa-tz/evaluation_geometry_map/data/timing/',subf);
 outputstr=['/share/goa-tz/evaluation_geometry_map/data/timing/',subf,'/',name];
 
+mode=1;
+filter = 1;
+
 data =load(loadstr);
 
-%data =load('/home/goa-tz/eval/timing/cylinder_merge');
-%make raw data plot
-plot([1:1:length(data)],data(:,2));
-print('dpdf',[outputstr,'_raw.pdf']);
+%plot([1:1:length(data)],data(:,2));
+%print('dpdf',[outputstr,'_raw.pdf']);
 
 data=sortrows(data);
 %assign columns to values
@@ -51,9 +54,37 @@ end
 
 m=i_sum(:,2)./i_sum(:,3);
 
+if mode ==1
+ % when only last number of shapes is to be evaluate   
+indices=find(ns==ns(end));
+relevant_raw = t(indices);
+plot([1:1:length(relevant_raw)],relevant_raw)
+hold on
+plot([1:1:length(relevant_raw)],relevant_raw,'ro')
+print('-dpdf',[outputstr,'_sel.pdf'])
+std_dev=std(relevant_raw);
+indices_blunder =find((relevant_raw-mean(relevant_raw))>2*std_dev)
+ relevant_filter=relevant_raw;
+ length(relevant_filter);
+relevant_filter(indices_blunder)=[];
+length(relevant_filter);
+if filter==1
+    m = sum(relevant_filter)/length(relevant_filter);
+    figure()
+    plot([1:1:length(relevant_filter)],relevant_filter)
+    hold on
+    plot([1:1:length(relevant_filter)],relevant_filter,'ro')
+    print('-dpdf',[outputstr,'_filter.pdf'])
+else    
+    m = sum(relevant_raw)/length(relevant_raw);
+end
+i_sum=ns(end);
+
+end
+
 if size(m,1)>1
-plot(i_sum(:,1),m)
-plot_trace([i_sum(:,1),m*1000],'k','o','mergeTime in msec')
+plot(i_sum(:,1),m);
+plot_trace([i_sum(:,1),m*1000],'k','o','mergeTime in msec');
 end
 header={'NumberOfShapes','AverageTime[msec]'};
 data = [i_sum(:,1),m*1000];

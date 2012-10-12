@@ -75,6 +75,8 @@ end
 if(draw_p_num == true)
     
     for i=1:1:polygon.num_vertices
+        plot3(polygon.vertices(i,1),polygon.vertices(i,2),polygon.vertices(i,3),'o','MarkerSize',0.1,'Color',color);
+
         text(polygon.vertices(i,1),polygon.vertices(i,2),polygon.vertices(i,3),num2str(i-1),'Color',color)
     end
 

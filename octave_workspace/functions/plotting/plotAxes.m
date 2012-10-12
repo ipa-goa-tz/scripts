@@ -70,13 +70,13 @@ if(nargin==3)
 end
 
 
-x_axis=origin + (scale * vec_norm(axes(:,1)));
-y_axis=origin + (scale * vec_norm(axes(:,2)));
-z_axis=origin + (scale * vec_norm(axes(:,3)));
+x_axis=origin + (scale * vec_norm(axes(:,1),1));
+y_axis=origin + (scale * vec_norm(axes(:,2),1));
+z_axis=origin + (scale * vec_norm(axes(:,3),1));
 
-x_axis_2=origin + (scale * 0.5*vec_norm(axes(:,1)));
-y_axis_2=origin + (scale * 0.5*vec_norm(axes(:,2)));
-z_axis_2=origin + (scale * 0.5*vec_norm(axes(:,3)));
+x_axis_2=origin + (scale * 0.5*vec_norm(axes(:,1),1));
+y_axis_2=origin + (scale * 0.5*vec_norm(axes(:,2),1));
+z_axis_2=origin + (scale * 0.5*vec_norm(axes(:,3),1));
 
 
 plot3([origin(1);x_axis(1)],[origin(2);x_axis(2)],[origin(3);x_axis(3)],'r','LineWidth',3);
